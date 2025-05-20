@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>le-cmyk | Coded in the Shadows</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: 'VT323', monospace;
+      overflow-x: hidden;
+      line-height: 1.4;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Ambient Noise Overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" result="noise"/><feColorMatrix type="saturate" values="0"/><feBlend in="SourceGraphic" in2="noise" mode="multiply"/></filter><rect filter="url(%23noise)" width="200" height="200"/></svg>') repeat;
+      opacity: 0.05;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* Glitch Title */
+    .glitch {
+      position: relative;
+      color: #0f0;
+      font-size: 6rem;
+      text-align: center;
+      margin-top: 5vh;
+      animation: flicker 2s infinite;
+      z-index: 20;
+    }
+    .glitch::before,
+    .glitch::after {
+      content: 'le-cmyk';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+    }
+    .glitch::before { animation: glitchTop 2s infinite ease-in-out; color: #f0f; top: -2px; }
+    .glitch::after  { animation: glitchBottom 2s infinite ease-in-out; color: #0ff; top: 2px; }
+
+    @keyframes flicker { 0%,18%,22%,25%,53%,57%,100%{opacity:1;} 20%,24%,55%{opacity:0.4;} }
+    @keyframes glitchTop {
+      0%{clip:rect(0,900px,0,0);}10%{clip:rect(5px,900px,30px,0);transform:translate(-2px,-2px);}20%{clip:rect(60px,900px,120px,0);transform:translate(2px,2px);}30%{clip:rect(30px,900px,70px,0);transform:translate(-2px,0);}100%{clip:rect(0,900px,0,0);}    }
+    @keyframes glitchBottom {
+      0%{clip:rect(0,900px,0,0);}10%{clip:rect(60px,900px,120px,0);transform:translate(2px,2px);}20%{clip:rect(5px,900px,30px,0);transform:translate(-2px,-2px);}30%{clip:rect(30px,900px,70px,0);transform:translate(2px,0);}100%{clip:rect(0,900px,0,0);}    }
+
+    /* Section Styling */
+    section { margin: 4rem auto; padding: 0 2rem; max-width: 700px; position: relative; z-index: 20; }
+    section h2 { font-size: 2.5rem; text-shadow: 0 0 5px #0f0; margin-bottom: 1rem; border-bottom: 2px solid #0f0; display: inline-block; }
+    section p, section ul { margin-top: 1rem; font-size: 1.1rem; }
+    section ul { list-style: none; padding-left: 1rem; }
+    section ul li { position: relative; margin-bottom: 0.8rem; padding-left: 1.5rem; }
+    section ul li::before { content: '▸'; position: absolute; left: 0; color: #0ff; }
+
+    /* Footer Shadow */
+    footer { text-align: center; padding: 2rem 1rem; font-size: 0.8rem; color: #020; background: rgba(0,0,0,0.8); border-top: 1px solid #020; position: relative; z-index: 20; }
+  </style>
+</head>
+<body>
+  <div class="glitch">le-cmyk</div>
+
+  <section id="about">
+    <h2>About the Legend</h2>
+    <p>A phantom in the digital realm, <strong>le-cmyk</strong> codes in whispered keystrokes, hidden in private repositories. Fueled by midnight oil and synthetic dreams, this coder bends algorithms like a sorcerer.</p>
+  </section>
+
+  <section id="origins">
+    <h2>Origins in the Dark</h2>
+    <p>Rumored to have started in a forgotten basement lab, le‑cmyk’s first lines of assembly shifted the way circuits spoke. Each botched compile fueled the next breakthrough, forging a coder who thrives beyond the light.</p>
+  </section>
+
+  <section id="secrets">
+    <h2>Legendary Secrets</h2>
+    <ul>
+      <li>Contributed unseen AI modules in top-secret orgs, whispered in hacker circles.</li>
+      <li>Mastered three esoteric languages documented only in encrypted logs.</li>
+      <li>Ghostwritten a kernel patch that lives on in darknet archives.</li>
+      <li>Reversed an AI model by heart-mapping its latent space during a marathon hack.</li>
+      <li>Maintains a private neural network that predicts coding trends—its source is myth and code.</li>
+      <li>Once broke quantum encryption in simulation, then erased every trace.</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Hidden Projects</h2>
+    <ul>
+      <li><strong>Phantom Compiler</strong> — Transforms pseudocode into obfuscated machine language in real time.</li>
+      <li><strong>Spectral AI</strong> — A neural net that learns from dreams, trained in isolated frames.</li>
+      <li><strong>Blackout OS</strong> — A secure, minimalist kernel running solely in volatile memory.</li>
+      <li><strong>Nightfall Logger</strong> — Logs system events to an encrypted ledger on-chain.</li>
+    </ul>
+  </section>
+
+  <section id="labyrinth">
+    <h2>AI Labyrinth</h2>
+    <p>Deep within unindexed networks, le‑cmyk navigates an AI maze of evolving algorithms. Each turn reveals new puzzles—generative tensors that reshape reality, adversarial bots that hunt their creators, and loops that echo into eternity.</p>
+  </section>
+
+  <section id="archives">
+    <h2>Encrypted Archives</h2>
+    <ul>
+      <li>Archive Alpha: Handwritten notes on self-modifying code.</li>
+      <li>Archive Beta: Encrypted blueprints for a sentient test harness.</li>
+      <li>Archive Gamma: Fragmented datasets of impossible computational proofs.</li>
+    </ul>
+  </section>
+
+  <section id="data-engineer">
+    <h2>Data Engineering Process</h2>
+    <p>In the shadows, le-cmyk orchestrates silent data pipelines to feed the AI labyrinth. The process:</p>
+    <ul>
+      <li>Extract raw data from hidden endpoints, bypassing standard APIs.</li>
+      <li>Transform and clean through encrypted ETL scripts, executed in memory.</li>
+      <li>Load into clandestine data warehouses, accessible only via token shaders.</li>
+      <li>Orchestrate workflows with ghost schedulers, ensuring zero trace logs.</li>
+      <li>Monitor and validate streams with AI-driven anomaly detection in real time.</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 le-cmyk — Secrets never fade.
+  </footer>
+</body>
+</html>
